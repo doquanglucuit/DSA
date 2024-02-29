@@ -1,15 +1,12 @@
 import numpy as np
 import time
-with open('sort.input', 'r') as fileInp:
-    with open('sort.out', 'w') as fileOut:
-        while True:
-            f = fileInp.readline()
-            if f == "":
-                break
-            line = list(map(float, f.split()))
-    
-            tic = time.time()
-            line.sort()
-            toe = time.time()
+for i in range (0, 10):
+    inputFile = 'sort' + str(i) + '.inp'
+    with open(inputFile, 'r') as fileInp:
+        line = list(map(float, fileInp.readline().split()))
 
-            print(int((toe - tic) * 1000))
+        tic = time.time()
+        line.sort()
+        toe = time.time()
+
+        print(int((toe - tic) * 1000))
